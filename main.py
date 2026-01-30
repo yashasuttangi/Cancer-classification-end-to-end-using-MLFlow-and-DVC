@@ -3,6 +3,8 @@ from ChestCancerClassifier.pipeline.stage_01_data_ingestion import DataIngestion
 from ChestCancerClassifier.pipeline.stage_02_prepare_base_model import PrepareBaseModelTrainingPipeline
 from ChestCancerClassifier.pipeline.stage_03_model_trainer import ModelTrainingPipeline
 from ChestCancerClassifier.pipeline.stage_04_model_evaluation import EvaluationPipeline
+import dagshub
+import mlflow
 
 STAGE_NAME = "Data Ingestion Stage"
 
@@ -37,6 +39,16 @@ try:
 except Exception as e:
     logger.exception(e)
     raise e 
+
+
+
+dagshub.init(
+    repo_owner="yashuttangi",
+    repo_name="Cancer-classification-end-to-end-using-MLFlow-and-DVC",
+    mlflow=True
+)
+
+mlflow.set_experiment("ChestCancerClassification")
 
 STAGE_NAME = "Evaluation Stage"
 try:
