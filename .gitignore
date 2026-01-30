@@ -212,3 +212,4 @@ mlruns/
 .dvc/
 .dvcignore
 dvc.lock
+.secrets
