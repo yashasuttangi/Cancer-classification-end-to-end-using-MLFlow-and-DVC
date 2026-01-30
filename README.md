@@ -12,6 +12,10 @@ End to End ML project with deployment on AWS using ML Flow and DVC.
 8. Update the main.py 
 9. Update the dvc.yaml file 
 
+## DVC Commands 
+- dvc init 
+- dvc repro 
+- dvc dag 
 
 ## AWS CI/CD Deployment with GitHub Actions 
 
